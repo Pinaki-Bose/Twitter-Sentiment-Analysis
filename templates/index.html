@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentimentor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!--<button id="darkModeToggle" class="dark-toggle">🌙Dark Mode</button> -->
+
+        <h1>Twitter Sentiment Analyzer 💬</h1>
+       
+        <form method="POST" action="/">
+
+            <!-- Loading Spinner -->
+            <div id="loading" style="display: none;" class="loading-spinner"></div>
+             
+            <textarea name="tweet" placeholder="Enter your tweet here..." required>{{ tweet }}</textarea>
+            <button type="submit">Analyze</button>
+            <script>
+                const form = document.querySelector('form');
+                const loading = document.getElementById('loading');
+            
+                form.addEventListener('submit', () => {
+                    loading.style.display = 'block';
+                });
+            </script>
+            
+        </form>
+
+        {% if result %}
+           <div class="result-card {{ 'positive' if result == 'Positive' else 'negative' }} fade-in">
+              <p><strong>Sentiment:</strong> {{ result }}
+              {% if result == 'Positive' %}
+                   😊🎉
+              {% else %}
+                   😞💔
+              {% endif %}
+              </p>
+           </div>
+        {% endif %}
+
+
+    </div>
+    
+    <!--
+    <script>
+        const toggleButton = document.getElementById('darkModeToggle');
+        const body = document.body;
+    
+        // Apply the saved theme on load
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+        }
+    
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+    
+            // Save or remove the theme in localStorage
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script> -->
+    
+    
+</body>
+</html>
