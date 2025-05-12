@@ -28,19 +28,45 @@
             </script>
             
         </form>
+    
 
         {% if result %}
-           <div class="result-card {{ 'positive' if result == 'Positive' else 'negative' }} fade-in">
-              <p><strong>Sentiment:</strong> {{ result }}
-              {% if result == 'Positive' %}
-                   😊🎉
-              {% else %}
-                   😞💔
-              {% endif %}
-              </p>
-           </div>
+            <div class="result-card {{ 'positive' if result == 'Positive' else 'negative' }} fade-in">
+                <p><strong>Sentiment:</strong> {{ result }}
+                {% if result == 'Positive' %}
+                      😊🎉
+                {% else %}
+                      😞💔
+                {% endif %}
+                </p>
+            </div>
         {% endif %}
 
+        {% if sarcasm_result is defined %}
+            <div class = "sarcasm-box">
+                 <p><strong>Sarcasm:</strong> {{ sarcasm_result }}
+                  {% if sarcasm_result == 'Sarcastic' %}
+                        😏🎭
+                  {% else %}
+                         🙃
+                  {% endif %}
+                   </p>
+            </div>
+        {% endif %}
+
+
+
+       {% if tweet %}
+           <h3>Original Tweet:</h3>
+           <p>{{ tweet }}</p>
+       {% endif %}
+
+
+        
+        <br>
+        <a href="/dashboard">
+            <button>View Dashboard</button>
+        </a>
 
     </div>
     

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dashboard.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/plotly.js-dist@2.10.0/dist/plotly.min.js"></script>
+</head>
+<body>
+    <h1>Prediction Dashboard</h1>
+
+    <!-- Sentiment Pie Chart -->
+    <h3>Sentiment Distribution</h3>
+
+    <div class="pie-charts">
+        <div class="sentiment-pie">
+            <h3>Sentiment Distribution</h3>
+            {{ sentiment_pie_html | safe }}
+        </div>
+        <div class="sarcasm-pie">
+            <h3>Sarcasm Distribution</h3>
+            {{ sarcasm_pie_html | safe }}
+        </div>
+    </div>
+    
+    {% if predictions %}
+        <h3>Prediction List</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Tweet</th>
+                    <th>Sentiment</th>
+                    <th>Sarcasm</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for prediction in predictions %}
+                    <tr>
+                        <td>{{ prediction['tweet'] }}</td>
+                        <td>{{ prediction['sentiment'] }}</td>
+                        <td>{{ prediction['sarcasm'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No predictions made yet!</p>
+    {% endif %}
+    
+    <a href="/">Go back to Home</a>
+</body>
+</html>
