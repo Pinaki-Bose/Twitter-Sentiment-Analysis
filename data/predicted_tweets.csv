@@ -1,0 +1,38 @@
+i love you,Positive
+"how are you??
+",Positive
+"love you
+",Positive
+"i dont like ice cream
+",Negative
+"i am singing happily
+",Positive
+Tweet,Sentiment,Sarcasm
+"hello, you look beautiful today",Positive,Not Sarcastic
+Tweet,Sentiment,Sarcasm
+this is a nice morning,Positive,Sarcastic
+Tweet,Sentiment,Sarcasm
+this is so fun,Positive,Sarcastic
+Tweet,Sentiment,Sarcasm
+who are you??,Positive,Not Sarcastic
+Tweet,Sentiment,Sarcasm
+"i love you
+",Positive,Not Sarcastic
+Tweet,Sentiment,Sarcasm
+hiii,Positive,Not Sarcastic
+Tweet,Sentiment,Sarcasm
+i love you,Positive,Not Sarcastic
+Tweet,Sentiment,Sarcasm
+i love you,Positive,Not Sarcastic
+Tweet,Sentiment,Sarcasm
+you are looking beautiful today,Positive,Not Sarcastic
+Tweet,Sentiment,Sarcasm
+i love ice cream,Positive,Not Sarcastic
+Tweet,Sentiment,Sarcasm
+who are you??,Positive,Not Sarcastic
+Tweet,Sentiment,Sarcasm
+i love you,Positive,Not Sarcastic
+Tweet,Sentiment,Sarcasm
+we are so happy you could ditch us,Positive,Not Sarcastic
+Tweet,Sentiment,Sarcasm
+you are not funny,Positive,Not Sarcastic
